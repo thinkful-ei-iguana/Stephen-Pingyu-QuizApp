@@ -18,7 +18,7 @@
         font-size: 40px;
     }
     
-    .container {
+    .quiz-window {
         max-width: 1000px;
         padding-left: 20px;
         padding-right: 20px;
@@ -30,7 +30,7 @@
         text-align: center;
     }
     
-    .container h3 {
+    .quiz-window h3 {
         padding-top: 25px;
     }
     
@@ -51,7 +51,7 @@
     }
     
     @media screen and (min-width: 768px) and (max-width: 1024px) {
-        .container {
+        .quiz-window {
             display: block;
             text-align: center;
             width: 90%
@@ -65,7 +65,7 @@
     }
     
     @media screen and (min-width: 319px) and (max-width: 767px) {
-        .container {
+        .quiz-window {
             display: block;
             text-align: center;
             width: 90%
