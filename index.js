@@ -33,7 +33,7 @@ function renderCorrectAnswer() {
   $('.answer').html(
     `<h4 class="wrong-correct-title">YOU GOT IT!!!</h4>
     <p class="wrong-correct-text>You must have you're head in the stars!</p>
-    <button type="submit" class="next-question>Next Question</button>`
+    <button type="submit" class="next-question js-next-question">Next Question</button>`
   )
 }
 
