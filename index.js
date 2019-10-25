@@ -42,7 +42,6 @@ function renderWrongAnswer() {
 }
 
 function renderFinal() {
-<<<<<<< HEAD
   //Renders the last screen displaying the users score and displays a message dependant on how well they.
 }
 
@@ -50,9 +49,5 @@ function handleQuizApp(){
   quizStart();
   handleQuiz();
   handleSelectOption();
-  restartQuiz
-=======
-    //Renders the last screen displaying the users score and displays a message dependant on how well they.
->>>>>>> 749ff1461f8e75d4a3cac60efc772d7a6bbab7b3
-
+  restartQuiz();
 }
