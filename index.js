@@ -1,12 +1,31 @@
 'use strict';
 
 function renderStart() {
-  //Renders first screen when users loads the page
-    
+    //Renders first screen when users loads the page 
 }
 
 function renderQuestion() {
-  //Renders each of the questions based on the info stored in the Questions array
+    //Renders each of the questions based on the info stored in the Questions array\
+    const questionsHtml = $(`
+    <section>
+      <form id='js-questions' class='questions-form'>
+      <fieldset>
+        <div class = 'question'>
+          <legend>${questions.question}</legend>
+        </div>
+
+        <div class='options'>
+          <div class='js-options'>
+          </div>
+        </div>
+
+        <div class='q-submit'>
+          <button type='submit' id='answer'>Submit</button>
+          <button type='button' id='next'>Next</button>
+        </div>
+        </fieldset>
+      </form>
+    </section>`);
 }
 
 function renderCorrectAnswer() {
@@ -23,6 +42,7 @@ function renderWrongAnswer() {
 }
 
 function renderFinal() {
+<<<<<<< HEAD
   //Renders the last screen displaying the users score and displays a message dependant on how well they.
 }
 
@@ -31,5 +51,8 @@ function handleQuizApp(){
   handleQuiz();
   handleSelectOption();
   restartQuiz
+=======
+    //Renders the last screen displaying the users score and displays a message dependant on how well they.
+>>>>>>> 749ff1461f8e75d4a3cac60efc772d7a6bbab7b3
 
 }
