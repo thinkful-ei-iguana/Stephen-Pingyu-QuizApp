@@ -1,7 +1,10 @@
 'use strict';
 
 function renderStart() {
-    //Renders first screen when users loads the page 
+    //Renders first screen when users loads the page
+    $('.quiz-window').html(
+   ');
+    ) 
 }
 
 function renderQuestion() {
@@ -48,8 +51,10 @@ function renderFinal() {
 }
 
 function handleQuizApp(){
-  quizStart();
+  renderStart();
   handleQuiz();
   handleSelectOption();
   restartQuiz();
 }
+
+$(handleQuizApp());
