@@ -41,7 +41,7 @@ function renderQuestion() {
 }
 
 function answerSubmit() {
-  $('.quiz-window').on('click', '.submit-answer', event =>
+  $('.quiz-window').on('click', '.submit-answer', event => {
     event.preventDefault();
     let givenAnswer = $('input: checked');
     let userAnswer = givenAnswer.val();
@@ -53,7 +53,7 @@ function answerSubmit() {
     else {
       renderWrongAnswer();
     }
-  );
+  });
 }
 
 function handleQuizApp() {
