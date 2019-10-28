@@ -1,10 +1,10 @@
 'use strict';
 
-function renderStart() {
-    //Renders first screen when users loads the page
-    $('.quiz-window').html(
-   ');
-    ) 
+function startQuiz() {
+  $('.start-button').on('submit', event => {
+    event.preventDefault();
+    $('.quiz-window').html(renderQuestion());
+  });
 }
 
 function renderQuestion() {
