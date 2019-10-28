@@ -26,8 +26,10 @@ function renderQuestion() {
     <label for="${item}">${item}</label>
     </div>`);
   $('.quiz-window').html(
-    `<p class="question-tracker">Question: ${STORE.currQuestion} out of ${STORE.questions.length}</p>
+    `<div>
+    <p class="question-tracker">Question: ${STORE.currQuestion} out of ${STORE.questions.length}</p>
     <p class="score-tracker">Score: ${STORE.userScore} out of ${STORE.questions.length}</p>
+    </div>
     <h3 class="question">${question.question}</h3>
     <form>
     <div class="options">
