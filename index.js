@@ -9,9 +9,9 @@ function trackUserScore() {
 }
 
 function startQuiz() {
-  $('#start').on('submit', event => {
+  $('.quiz-window').on('submit', '#start', event => {
     event.preventDefault();
-    $('.quiz-window').html(renderQuestion());
+    return $('.quiz-window').html(renderQuestion());
   });
 
 }
@@ -64,5 +64,9 @@ function renderFinal() {
 function handleQuizApp() {
   startQuiz();
   renderQuestion();
+  renderCorrectAnswer();
+  renderWrongAnswer();
+  renderFinal();
 }
+
 $(handleQuizApp());
