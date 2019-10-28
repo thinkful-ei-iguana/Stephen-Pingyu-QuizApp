@@ -65,7 +65,9 @@ function renderCorrectAnswer() {
     <p class="question-tracker">Question: ${STORE.currQuestion} out of ${STORE.questions.length}</p>
     <p class="score-tracker">Score: ${STORE.userScore} out of ${STORE.questions.length}</p>
     </div>
-    <h3`
+    <h3>Congratulations, you got it right!!!</h3>
+    <p>You must be strong with in ways of the force.</p>
+    <button type="button" id="start">Next</button>`
   );
 }
 
