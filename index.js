@@ -9,7 +9,7 @@ function trackUserScore() {
 }
 
 function startQuiz() {
-  $('.start-button').on('submit', event => {
+  $('#start').on('submit', event => {
     event.preventDefault();
     $('.quiz-window').html(renderQuestion());
   });
@@ -27,7 +27,7 @@ function renderQuestion() {
 }
 
 function generateQuestion(question) {
-  let questionNum = STORE[currQuestion];
+  let questionNum = STORE[STORE.currQuestion];
   let answersNum = questionNum.answers;
   return `
   <span class="question-tracker">${STORE.currQuestion}</span>
