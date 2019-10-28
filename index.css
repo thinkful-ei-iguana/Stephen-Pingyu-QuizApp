@@ -22,7 +22,8 @@
         max-width: 1000px;
         padding-left: 20px;
         padding-right: 20px;
-        height: 500px;
+        padding-bottom: 20px;
+        height: 100%;
         margin: 0 auto;
         background: rgb(173, 126, 15);
         background: rgba(71, 58, 23, 0.85);
@@ -32,6 +33,10 @@
     
     .quiz-window h3 {
         padding-top: 25px;
+    }
+    
+    .images {
+        width: 60%;
     }
     
     button {
@@ -62,6 +67,10 @@
             flex-direction: column;
             padding: 0;
         }
+        .images {
+            width: 60%;
+            height: auto;
+        }
     }
     
     @media screen and (min-width: 319px) and (max-width: 767px) {
@@ -75,5 +84,9 @@
             text-align: center;
             flex-direction: column;
             padding: 0;
+        }
+        .images {
+            width: 60%;
+            height: auto;
         }
     }
