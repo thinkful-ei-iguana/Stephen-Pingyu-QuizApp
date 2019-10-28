@@ -30,15 +30,17 @@ function renderQuestion() {
 
 function renderCorrectAnswer() {
   //Renders the page when an answer is correct
-  $('.answer').html(
-    `<h4 class="wrong-correct-title">YOU GOT IT!!!</h4>
-    <p class="wrong-correct-text>You must have you're head in the stars!</p>
+  $('.quiz-window').html(
+    `<h3>Star Wars</h3>
+    <h4 class="wrong-correct-title">YOU GOT IT!!!</h4>
+    <p class="wrong-correct-text>The Force is strong with this one!</p>
     <button type="submit" class="next-question js-next-question">Next Question</button>`
   )
 }
 
 function renderWrongAnswer() {
   //Renders the display when the user answers incorrectly. Displaying the correct answer.
+
 }
 
 function renderFinal() {
