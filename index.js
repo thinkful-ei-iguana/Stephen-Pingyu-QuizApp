@@ -1,5 +1,13 @@
 'use strict';
 
+function trackCurrQuestion() {
+  STORE.currQuestion++;
+}
+
+function trackUserScore() {
+  STORE.userScore++;
+}
+
 function startQuiz() {
   $('.start-button').on('submit', event => {
     event.preventDefault();
@@ -11,12 +19,31 @@ function startQuiz() {
 function renderQuestion() {
   //Renders each of the questions based on the info stored in the Questions array
   if (STORE.currQuestion < STORE.questions.length) {
-    return generateQuestion(currQuestion); 
+    return generateQuestion(STORE.currQuestion); 
   }
   else {
     return renderFinal();
   }
+}
 
+function generateQuestion(question) {
+  let questionNum = STORE[currQuestion];
+  let answersNum = questionNum.answers;
+  return `
+  <span class="question-tracker">${STORE.currQuestion}</span>
+  <span class="score-tracker">${STORE.userScore}</span>
+  <p class="question">${questionNum.question}</p>
+  <form class="answers">
+    <input type="radio" for="${answersNum[0]}">
+      <label class="answer" id="${answersNum[0]}>${answersNum[0]}</label>
+    <input type="radio" for="${answersNum[1]}">
+      <label class="answer" id="${answersNum[1]}>${answersNum[1]}</label>
+    <input type="radio" for="${answersNum[2]}">
+      <label class="answer" id="${answersNum[2]}>${answersNum[2]}</label>
+    <input type="radio" for="${answersNum[3]}">
+      <label class="answer" id="${answersNum[3]}>${answersNum[3]}</label>
+  `;
+}
 function renderCorrectAnswer() {
   //Renders the page when an answer is correct
   $('.answer').html(
@@ -35,9 +62,7 @@ function renderFinal() {
 }
 
 function handleQuizApp() {
-  quizStart();
-  handleQuiz();
-  handleSelectOption();
-  restartQuiz()
+  startQuiz();
+  renderQuestion();
 }
 $(handleQuizApp());
