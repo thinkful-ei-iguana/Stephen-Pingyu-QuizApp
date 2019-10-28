@@ -8,6 +8,15 @@ function trackUserScore() {
     STORE.userScore++;
 }
 
+function loadPage() {
+  $('.quiz-window').html(
+    `<h3>Star Wars</h3>
+      <img src="images/chewy-naps.jpg" alt="chewy naps" class="images">
+      <br>
+      <button type="button" id="start">Start Quiz</button>`
+  );
+}
+
 function startQuiz() {
     $('.quiz-window').on('submit', '#start', event => {
         event.preventDefault();
@@ -62,6 +71,7 @@ function renderFinal() {
 }
 
 function handleQuizApp() {
+    loadPage();
     startQuiz();
     renderQuestion();
     renderCorrectAnswer();
