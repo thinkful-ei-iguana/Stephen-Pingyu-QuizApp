@@ -37,7 +37,21 @@
     }
     
     .images {
-        width: 60%;
+        width: 50%;
+    }
+    
+    .options {
+        margin: 0 auto;
+        width: 50%;
+        padding-bottom: 20px;
+    }
+    
+    ul {
+        list-style: none;
+        margin: 0;
+        overflow: auto;
+        padding: 0;
+        text-align: left;
     }
     
     button {
@@ -68,8 +82,9 @@
             flex-direction: column;
             padding: 0;
         }
-        .images {
-            width: 60%;
+        .images,
+        .options {
+            width: 50%;
             height: auto;
         }
     }
@@ -86,8 +101,9 @@
             flex-direction: column;
             padding: 0;
         }
-        .images {
-            width: 60%;
+        .images,
+        .options {
+            width: 50%;
             height: auto;
         }
     }
