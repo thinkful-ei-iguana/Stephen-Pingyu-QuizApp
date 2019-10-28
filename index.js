@@ -26,7 +26,7 @@ function renderQuestion() {
     <label for="${item}">${item}</label>
     </div>`);
   $('.quiz-window').html(
-    `<div>
+    `<div class="trackers">
     <p class="question-tracker">Question: ${STORE.currQuestion} out of ${STORE.questions.length}</p>
     <p class="score-tracker">Score: ${STORE.userScore} out of ${STORE.questions.length}</p>
     </div>
@@ -50,12 +50,23 @@ function answerSubmit() {
     let currentQuestion = STORE.questions[STORE.currQuestion];
     let correctAnswer = currentQuestion.correctAns;
     if (userAnswer === correctAnswer) {
+      STORE.score++;
       renderCorrectAnswer();
     }
     else {
       renderWrongAnswer();
     }
   });
+}
+
+function renderCorrectAnswer() {
+  $('.quiz-window').html(
+    `<div class="trackers">
+    <p class="question-tracker">Question: ${STORE.currQuestion} out of ${STORE.questions.length}</p>
+    <p class="score-tracker">Score: ${STORE.userScore} out of ${STORE.questions.length}</p>
+    </div>
+    <h3`
+  );
 }
 
 function handleQuizApp() {
