@@ -25,7 +25,7 @@ function renderQuestion() {
     }
 }
 
-function generateQuestion(question) {
+function generateQuestion(questions) {
     let questionNum = STORE[STORE.currQuestion];
     let answersNum = questionNum.answers;
     return `
