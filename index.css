@@ -22,8 +22,12 @@
         max-width: 1000px;
         padding-left: 20px;
         padding-right: 20px;
+<<<<<<< HEAD
         padding-bottom: 20px;
         height: auto;
+=======
+        height: 500px;
+>>>>>>> cf308648b9ac75c3a5e4e05cb26310f79ab27643
         margin: 0 auto;
         background: rgb(173, 126, 15);
         background: rgba(71, 58, 23, 0.85);
