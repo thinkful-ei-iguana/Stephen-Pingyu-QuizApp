@@ -1,13 +1,5 @@
 'use strict';
 
-function trackCurrQuestion() {
-  STORE.currQuestion++;
-}
-
-function trackUserScore() {
-  STORE.userScore++;
-}
-
 function loadPage() {
   $('.quiz-window').html(
     `<img src="images/chewy-naps.jpg" alt="chewy naps with porgs" class="images"></img>
@@ -19,14 +11,13 @@ function loadPage() {
 function nextQuestion() {
   $('#start').on('click', event => {
     event.preventDefault();
-    trackCurrQuestion();
+    STORE.currQuestion++;
     $('.quiz-window').html(renderQuestion()); 
   });
 }
 
 function renderQuestion() {
   let question = STORE.questions[STORE.currQuestion];
-  console.log(question, STORE.currQuestion);
   let answerList = question.answers;
   let renderAnswers = '';
   answerList.forEach(item => renderAnswers +=
@@ -42,6 +33,22 @@ function renderQuestion() {
     ${renderAnswers}
     <button class="submit-answer"><span>Submit</span></button>
     </form>`
+  );
+}
+
+function answerSubmit() {
+  $('.quiz-window').on('click', '.submit-answer', event =>
+    event.preventDefault();
+    let givenAnswer = $('input: checked');
+    let userAnswer = givenAnswer.val();
+    let currentQuestion = STORE.questions[STORE.currQuestion];
+    let correctAnswer = currentQuestion.correctAns;
+    if (userAnswer === correctAnswer) {
+      renderCorrectAnswer();
+    }
+    else {
+      renderWrongAnswer();
+    }
   );
 }
 
