@@ -22,6 +22,7 @@
         max-width: 1000px;
         padding-left: 20px;
         padding-right: 20px;
+        padding-bottom: 20px;
         height: auto;
         margin: 0 auto;
         background: rgb(173, 126, 15);
@@ -32,6 +33,10 @@
     
     .quiz-window h3 {
         padding-top: 25px;
+    }
+    
+    .images {
+        width: 60%;
     }
     
     button {
@@ -54,13 +59,16 @@
         .quiz-window {
             display: block;
             text-align: center;
-            width: 90%
         }
         header {
             display: flex;
             text-align: center;
             flex-direction: column;
             padding: 0;
+        }
+        .images {
+            width: 60%;
+            height: auto;
         }
     }
     
@@ -75,5 +83,9 @@
             text-align: center;
             flex-direction: column;
             padding: 0;
+        }
+        .images {
+            width: 60%;
+            height: auto;
         }
     }
