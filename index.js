@@ -22,7 +22,7 @@ function renderQuestion() {
   let renderAnswers = '';
   answerList.forEach(item => renderAnswers +=
     `<div>
-    <input type="radio" name="question" id="${item}" val="${item}"></input>
+    <input type="radio" name="option" id="${item}" val="${item}"></input>
     <label for="${item}">${item}</label>
     </div>`);
   $('.quiz-window').html(
@@ -32,7 +32,7 @@ function renderQuestion() {
     </div>
     <h3 class="question">${question.question}</h3>
     <form id="answers">
-    <div class="options">
+    <div>
     <ul>
     ${renderAnswers}
     </ul>
@@ -45,7 +45,7 @@ function renderQuestion() {
 function answerSubmit() {
   $('.quiz-window').on('click', '.submit-answer', event => {
     event.preventDefault();
-    let userAnswer = $( 'input:checked' ).val();
+    let userAnswer = $( 'input[name=option]:checked' ).val();
     let currentQuestion = STORE.questions[STORE.currQuestion - 1];
     let correctAnswer = currentQuestion.correctAns;
     if (userAnswer === correctAnswer) {

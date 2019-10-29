@@ -31,6 +31,12 @@
         border-radius: 6px;
         text-align: center;
     }
+
+    .trackers {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
     
     .quiz-window h3 {
         padding-top: 25px;
