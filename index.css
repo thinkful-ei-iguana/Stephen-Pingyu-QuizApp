@@ -42,6 +42,11 @@
         flex-direction: row;
         justify-content: space-around;
     }
+
+    .text {
+      color: rgb(228, 177, 60);
+      text-shadow: 2px 2px 3px black;
+    }
     
     .quiz-window h3 {
         padding-top: 25px;
