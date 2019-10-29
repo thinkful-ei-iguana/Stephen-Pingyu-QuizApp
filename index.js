@@ -9,7 +9,7 @@ function loadPage() {
 }
 
 function nextQuestion() {
-  $('#start').on('click', event => {
+  $('.quiz-window').on('click', '#start', event => {
     event.preventDefault();
     STORE.currQuestion++;
     $('.quiz-window').html(renderQuestion()); 
@@ -21,10 +21,10 @@ function renderQuestion() {
   let answerList = question.answers;
   let renderAnswers = '';
   answerList.forEach(item => renderAnswers +=
-    `<li>
+    `<div class="options">
     <input type="radio" aria-label="${item}" name="option" id="${item}" val="${item}"></input>
     <label for="${item}">${item}</label>
-    </li>`);
+    </div>`);
   $('.quiz-window').html(
     `<div class="trackers">
     <p class="question-tracker">Question: ${STORE.currQuestion} out of ${STORE.questions.length}</p>
@@ -32,9 +32,7 @@ function renderQuestion() {
     </div>
     <h2 class="question">${question.question}</h2>
     <form id="answers">
-    <ul>
     ${renderAnswers}
-    </ul>
     <button class="submit-answer button"><span>Submit</span></button>
     </form>`
   );
