@@ -127,17 +127,20 @@
             flex-direction: column;
             padding: 0;
         }
+
+        h2 {
+          font-size: .80em;
+        }
+
         .images,
         .options {
             width: 50%;
             height: auto;
         }
 
+        p,
+        .options,
         .trackers {
-          font-size: .75em;
-        }
-
-        .options {
-          font-size: .75em;
+          font-size: .65em;
         }
     }
