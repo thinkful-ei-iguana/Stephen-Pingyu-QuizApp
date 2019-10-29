@@ -71,7 +71,7 @@ function renderCorrectAnswer() {
     <p class="text">You must be strong with in ways of the force.</p>
     <button class="start">Next</button>`
   );
-};
+}
 
 function renderWrongAnswer(correct) {
   $('.quiz-window').html(
@@ -80,7 +80,7 @@ function renderWrongAnswer(correct) {
     <span class="score-tracker text">Score: ${STORE.userScore} out of ${STORE.questions.length}</span>
     </section>
     <h2 class="text">You got it wrong...</h2>
-    <img src="images/wrong.jpg" alt="answer-pic" class="answer-pics simages" width="300px">
+    <img src="images/wrong.jpg" alt="answer-pic" class="answer-pics images" width="300px">
     <p class="text">The correct answer is: <span id="corrected">${correct}</span></p>
     <p class="text">Guess it's time to watch the movies again.</p>
     <button class="start">Next</button>`
