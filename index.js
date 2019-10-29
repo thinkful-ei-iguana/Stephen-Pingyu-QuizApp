@@ -36,9 +36,11 @@ function renderQuestion() {
     </section>
     <h2 class="question">${question.question}</h2>
     <form id="answers">
+    <fieldset>
     <ul>
     ${renderAnswers}
     </ul>
+    </fieldset>
     <button class="submit-answer button"><span>Submit</span></button>
     </form>`);
 }
