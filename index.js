@@ -34,8 +34,8 @@ function renderQuestion() {
     <span class="question-tracker text">Question: ${STORE.currQuestion} out of ${STORE.questions.length}</span>
     <span class="score-tracker text">Score: ${STORE.userScore} out of ${STORE.questions.length}</span>
     </section>
-    <h2 class="question text">${question.question}</h2>
     <form id="answers">
+    <h2 class="question text">${question.question}</h2>
     <fieldset>
     <ul>
     ${renderAnswers}
