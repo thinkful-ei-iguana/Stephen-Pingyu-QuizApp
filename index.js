@@ -68,7 +68,7 @@ function renderCorrectAnswer() {
     </section>
     <h2 class="text">Congratulations, you got it right!!!</h2>
     <img src="images/correct.png" alt="answer-pic" class="answer-pics images" width="300px">
-    <p class="text">You must be strong with in ways of the force.</p>
+    <p class="text">You must be strong in ways of the force.</p>
     <button class="start">Next</button>`
   );
 }
@@ -105,7 +105,7 @@ function finalScore() {
       <span class="question-tracker text">Question: ${STORE.currQuestion} out of ${STORE.questions.length}</span>
       <span class="score-tracker text">Score: ${STORE.userScore} out of ${STORE.questions.length}</span>
       </section>
-      <h2 class="text'>Better luck next time...</h2>
+      <h2 class="text">Better luck next time...</h2>
       <img src="images/bad.jpg" alt="sad face" class="images" width="300px">
       <p class="text">Why dont you go ahead and try the quiz again.</p>
       <button class="restart">Restart</button>`
