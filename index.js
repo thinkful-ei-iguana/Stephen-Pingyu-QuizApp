@@ -21,22 +21,20 @@ function renderQuestion() {
   let answerList = question.answers;
   let renderAnswers = '';
   answerList.forEach(item => renderAnswers +=
-    `<div>
-    <input type="radio" name="option" id="${item}" val="${item}"></input>
+    `<li>
+    <input type="radio" aria-label="${item}" name="option" id="${item}" val="${item}"></input>
     <label for="${item}">${item}</label>
-    </div>`);
+    </li>`);
   $('.quiz-window').html(
     `<div class="trackers">
     <p class="question-tracker">Question: ${STORE.currQuestion} out of ${STORE.questions.length}</p>
     <p class="score-tracker">Score: ${STORE.userScore} out of ${STORE.questions.length}</p>
     </div>
-    <h3 class="question">${question.question}</h3>
+    <h2 class="question">${question.question}</h2>
     <form id="answers">
-    <div>
     <ul>
     ${renderAnswers}
     </ul>
-    </div>
     <button class="submit-answer button"><span>Submit</span></button>
     </form>`
   );
@@ -55,6 +53,7 @@ function answerSubmit() {
     else {
       renderWrongAnswer(correctAnswer);
       console.log(userAnswer);
+      console.log(correctAnswer);
     }
   });
 }

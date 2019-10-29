@@ -41,6 +41,12 @@
     .quiz-window h3 {
         padding-top: 25px;
     }
+
+    .answer-options {
+      display: flex;
+      flex-direction: column;
+      justify-content: left;
+    }
     
     .images {
         width: 50%;
