@@ -31,21 +31,21 @@
         border-radius: 6px;
         text-align: center;
     }
-
+    
     .trackers {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
     }
     
     .quiz-window h3 {
         padding-top: 25px;
     }
-
+    
     .answer-options {
-      display: flex;
-      flex-direction: column;
-      justify-content: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
     }
     
     .images {
@@ -80,6 +80,10 @@
         border-radius: 3px;
         border-color: black;
         padding: 10px 20px;
+    }
+    
+    #corrected {
+        color: red;
     }
     
     @media screen and (min-width: 768px) and (max-width: 1024px) {

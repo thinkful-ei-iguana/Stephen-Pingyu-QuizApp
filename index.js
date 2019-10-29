@@ -31,8 +31,8 @@ function renderQuestion() {
     </section>`);
     $('.quiz-window').html(
         `<section class="trackers">
-    <p class="question-tracker">Question: ${STORE.currQuestion} out of ${STORE.questions.length}</p>
-    <p class="score-tracker">Score: ${STORE.userScore} out of ${STORE.questions.length}</p>
+    <span class="question-tracker">Question: ${STORE.currQuestion} out of ${STORE.questions.length}</span>
+    <span class="score-tracker">Score: ${STORE.userScore} out of ${STORE.questions.length}</span>
     </section>
     <h2 class="question">${question.question}</h2>
     <form id="answers">
@@ -40,8 +40,7 @@ function renderQuestion() {
     ${renderAnswers}
     </ul>
     <button class="submit-answer button"><span>Submit</span></button>
-    </form>`
-    );
+    </form>`);
 }
 
 function answerSubmit() {
@@ -59,33 +58,42 @@ function answerSubmit() {
     });
 }
 
+
+function renderPics() {
+    for (let i = 0; i <= pics.length; i++) {
+        $('.answer-pics').attr('src', `images/${i}.jpg`);
+    }
+}
+
+
 function renderCorrectAnswer() {
     $('.quiz-window').html(
         `<section class="trackers">
-    <p class="question-tracker">Question: ${STORE.currQuestion} out of ${STORE.questions.length}</p>
-    <p class="score-tracker">Score: ${STORE.userScore} out of ${STORE.questions.length}</p>
+    <span class="question-tracker">Question: ${STORE.currQuestion} out of ${STORE.questions.length}</span>
+    <span class="score-tracker">Score: ${STORE.userScore} out of ${STORE.questions.length}</span>
     </section>
     <h2>Congratulations, you got it right!!!</h2>
-    <img
+    <img src="" alt="answer-pic" class="answer-pics images" width="300px">
     <p>You must be strong with in ways of the force.</p>
     <button class="start">Next</button>`
     );
-}
+};
 
 function renderWrongAnswer(correct) {
     $('.quiz-window').html(
         `<section class="trackers">
-    <p class="question-tracker">Question: ${STORE.currQuestion} out of ${STORE.questions.length}</p>
-    <p class="score-tracker">Score: ${STORE.userScore} out of ${STORE.questions.length}</p>
+    <span class="question-tracker">Question: ${STORE.currQuestion} out of ${STORE.questions.length}</span>
+    <span class="score-tracker">Score: ${STORE.userScore} out of ${STORE.questions.length}</span>
     </section>
     <h2>You got it wrong...</h2>
-    <p>The correct answer is: ${correct}</p>
+    <img src="" alt="answer-pic" class="answer-pics simages" width="300px">
+    <p>The correct answer is: <span id="corrected">${correct}</span></p>
     <p>Guess it's time to watch the movies again.</p>
     <button class="start">Next</button>`
     );
 }
 
-function finalScore(score) {
+function finalScore() {
     if (STORE.userScore >= 3) {
         $('.quiz-window').html(
             `<section class="trackers">
@@ -100,8 +108,8 @@ function finalScore(score) {
     } else {
         $('.quiz-window').html(
             `<section class="trackers">
-      <p class="question-tracker">Question: ${STORE.currQuestion} out of ${STORE.questions.length}</p>
-      <p class="score-tracker">Score: ${STORE.userScore} out of ${STORE.questions.length}</p>
+      <span class="question-tracker">Question: ${STORE.currQuestion} out of ${STORE.questions.length}</span>
+      <span class="score-tracker">Score: ${STORE.userScore} out of ${STORE.questions.length}</span>
       </section>
       <h2>Better luck next time...</h2>
       <img src="images/bad.jpg" alt="sad face" class="images" width="300px">
