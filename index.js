@@ -26,7 +26,7 @@ function renderQuestion() {
   let renderAnswers = '';
   answerList.forEach(item => renderAnswers +=
         `<section class="options">
-    <input type="radio" name="option" value="${item}" required>
+    <input type="radio" name="option" id="${item}" value="${item}" required>
     <label for="${item}">${item}</label>
     </section>`);
   $('.quiz-window').html(
