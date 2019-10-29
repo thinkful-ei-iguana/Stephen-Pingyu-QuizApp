@@ -22,7 +22,7 @@ function renderQuestion() {
   let renderAnswers = '';
   answerList.forEach(item => renderAnswers +=
     `<div class="options">
-    <input type="radio" aria-label="${item} option" name="option" id="${item}" val="${item}"></input>
+    <input type="radio" aria-label="${item} option" name="option" id="${answerList.index}" val="${item}"></input>
     <label for="${item}">${item}</label>
     </div>`);
   $('.quiz-window').html(
@@ -75,6 +75,7 @@ function renderWrongAnswer(correct) {
     <p class="score-tracker">Score: ${STORE.userScore} out of ${STORE.questions.length}</p>
     </div>
     <h2>You got it wrong...</h2>
+    <p>The correct answer is: ${correct}</p>
     <p>Guess it's time to watch the movies again.</p>
     <button type="button" id="start">Next</button>`
   )
