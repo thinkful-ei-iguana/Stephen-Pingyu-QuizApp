@@ -25,47 +25,48 @@ function renderQuestion() {
     let answerList = question.answers;
     let renderAnswers = '';
     answerList.forEach(item => renderAnswers +=
-        `<div class="options">
-    <input type="radio" name="option" val="${item}" required></input>
+        `<section class="options">
+    <input type="radio" name="option" value="${item}" required>
     <label for="${item}">${item}</label>
-    </div>`);
+    </section>`);
     $('.quiz-window').html(
-        `<div class="trackers">
+        `<section class="trackers">
     <p class="question-tracker">Question: ${STORE.currQuestion} out of ${STORE.questions.length}</p>
     <p class="score-tracker">Score: ${STORE.userScore} out of ${STORE.questions.length}</p>
-    </div>
+    </section>
     <h2 class="question">${question.question}</h2>
     <form id="answers">
+    <ul>
     ${renderAnswers}
+    </ul>
     <button class="submit-answer button"><span>Submit</span></button>
     </form>`
     );
 }
 
 function answerSubmit() {
-    $('.quiz-window').on('click', '.submit-answer', event => {
+    $('.quiz-window').on('submit', event => {
         event.preventDefault();
-        let userAnswer = $('input[name=option]:checked').val();
+        let userAnswer = $('input:checked').val();
         let currentQuestion = STORE.questions[STORE.currQuestion - 1];
         let correctAnswer = currentQuestion.correctAns;
         if (userAnswer === correctAnswer) {
-            STORE.score++;
+            STORE.userScore++;
             renderCorrectAnswer();
         } else {
             renderWrongAnswer(correctAnswer);
-            console.log(userAnswer);
-            console.log(correctAnswer);
         }
     });
 }
 
 function renderCorrectAnswer() {
     $('.quiz-window').html(
-        `<div class="trackers">
+        `<section class="trackers">
     <p class="question-tracker">Question: ${STORE.currQuestion} out of ${STORE.questions.length}</p>
     <p class="score-tracker">Score: ${STORE.userScore} out of ${STORE.questions.length}</p>
-    </div>
+    </section>
     <h2>Congratulations, you got it right!!!</h2>
+    <img
     <p>You must be strong with in ways of the force.</p>
     <button class="start">Next</button>`
     );
@@ -73,10 +74,10 @@ function renderCorrectAnswer() {
 
 function renderWrongAnswer(correct) {
     $('.quiz-window').html(
-        `<div class="trackers">
+        `<section class="trackers">
     <p class="question-tracker">Question: ${STORE.currQuestion} out of ${STORE.questions.length}</p>
     <p class="score-tracker">Score: ${STORE.userScore} out of ${STORE.questions.length}</p>
-    </div>
+    </section>
     <h2>You got it wrong...</h2>
     <p>The correct answer is: ${correct}</p>
     <p>Guess it's time to watch the movies again.</p>
@@ -85,23 +86,25 @@ function renderWrongAnswer(correct) {
 }
 
 function finalScore(score) {
-    if (score >= 3) {
+    if (STORE.userScore >= 3) {
         $('.quiz-window').html(
-            `<div class="trackers">
+            `<section class="trackers">
       <p class="question-tracker">Question: ${STORE.currQuestion} out of ${STORE.questions.length}</p>
       <p class="score-tracker">Score: ${STORE.userScore} out of ${STORE.questions.length}</p>
-      </div>
+      </section>
       <h2>WOW! You really know a lot!!!</h2>
+      <img src="images/good.png" alt="happy face" class="images" width="300px">
       <p>You must be a Jedi Master like Yoda</p>
       <button classs="restart">Restart</button>`
         );
     } else {
         $('.quiz-window').html(
-            `<div class="trackers">
+            `<section class="trackers">
       <p class="question-tracker">Question: ${STORE.currQuestion} out of ${STORE.questions.length}</p>
       <p class="score-tracker">Score: ${STORE.userScore} out of ${STORE.questions.length}</p>
-      </div>
+      </section>
       <h2>Better luck next time...</h2>
+      <img src="images/bad.jpg" alt="sad face" class="images" width="300px">
       <p>Why dont you go ahead and try the quiz again.</p>
       <button class="restart">Restart</button>`
         );
