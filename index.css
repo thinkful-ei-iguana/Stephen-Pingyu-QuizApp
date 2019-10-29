@@ -17,12 +17,13 @@
         text-align: center;
         font-size: 40px;
     }
-
+    
     fieldset {
-      border: none;
+        border: none;
     }
     
     .quiz-window {
+        display: blcok;
         max-width: 1000px;
         padding-top: 20px;
         padding-left: 20px;
