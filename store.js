@@ -28,7 +28,7 @@ const STORE = {
     {
       question: 'What bounty hunter captures Han Solo?',
       answers: [
-        'Bobba Fett',
+        'Boba Fett',
         'Dog the Bounty Hunter',
         'Jabba the Hutt',
         'Darth Vader'
@@ -41,7 +41,7 @@ const STORE = {
       answers: [
         'Darth Tyranus',
         'Chewbacca',
-        'Bobba Fett',
+        'Boba Fett',
         'Jango Fett'
       ],
       correctAns: 'Jango Fett'
