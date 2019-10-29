@@ -132,4 +132,12 @@
             width: 50%;
             height: auto;
         }
+
+        .trackers {
+          font-size: .75em;
+        }
+
+        .options {
+          font-size: .75em;
+        }
     }
